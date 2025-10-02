@@ -86,9 +86,9 @@ export default function Header({ nonSticky = false, hideSearch = false, fullWidt
                 className="relative group"
               >
                 <Avatar className="h-8 w-8 md:h-10 md:w-10 border-2 border-transparent group-hover:border-primary transition-all">
-                  <AvatarImage src={session.user.image || '/user.svg'} alt={session.user.name || 'User'} />
+                  <AvatarImage src={session?.user?.image || '/user.svg'} alt={session?.user?.name || 'User'} />
                   <AvatarFallback className="bg-primary text-primary-foreground text-sm">
-                    {session.user.name?.charAt(0).toUpperCase() || 'U'}
+                    {session?.user?.name?.charAt(0).toUpperCase() || 'U'}
                   </AvatarFallback>
                 </Avatar>
                 <div className="absolute -bottom-1 -right-1 w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full border-2 border-background"></div>
@@ -201,7 +201,7 @@ export default function Header({ nonSticky = false, hideSearch = false, fullWidt
         <ProfileSidebar 
           isOpen={isProfileOpen} 
           onClose={() => setIsProfileOpen(false)}
-          user={session.user}
+          user={session?.user}
         />
       )}
     </header>
